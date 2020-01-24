@@ -1,9 +1,34 @@
 function sorting(arrNumber) {
-    // code di sini
+
+    for (let i = 0; i < arrNumber.length; i++) {
+        for (let j = i + 1; j < arrNumber.length; j++) {
+            if (arrNumber[i] < arrNumber[j]) {
+                let temp = arrNumber[i]
+                arrNumber[i] = arrNumber[j]
+                arrNumber[j] = temp
+            }
+        }
+    }
+    // console.log(arrNumber)
+    return arrNumber
 }
 
 function getTotal(arrNumber) {
-    // code di sini
+    var count = 0;
+
+
+    for (var i = 0; i < arrNumber.length; i++) {
+        // var nilaiAkhir = arrNumber.length - 1
+        // console.log(arrNumber(nilaiAkhir))
+        if (arrNumber[0] == arrNumber[i]) {
+            count++
+        }
+    }
+    if (arrNumber.length == 0) {
+        return "''"
+    }
+
+    return `angka paling besar adalah ${arrNumber[0]} dan jumlah kemunculan ${count} kali`
 }
 
 function mostFrequentLargestNumbers(arrNumber) {
